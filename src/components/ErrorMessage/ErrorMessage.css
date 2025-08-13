@@ -1,0 +1,89 @@
+.error-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid;
+  margin: 16px 0;
+  max-width: 100%;
+}
+
+.error-error {
+  background-color: #fef2f2;
+  border-color: #fecaca;
+  color: #dc2626;
+}
+
+.error-warning {
+  background-color: #fffbeb;
+  border-color: #fed7aa;
+  color: #d97706;
+}
+
+.error-info {
+  background-color: #eff6ff;
+  border-color: #bfdbfe;
+  color: #2563eb;
+}
+
+.error-icon {
+  font-size: 20px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.error-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.error-message {
+  margin: 0 0 12px 0;
+  font-size: 14px;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+.error-retry-button {
+  background-color: transparent;
+  border: 1px solid currentColor;
+  color: inherit;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.error-retry-button:hover {
+  background-color: currentColor;
+  color: white;
+}
+
+.error-retry-button:focus {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+/* Dark theme support */
+@media (prefers-color-scheme: dark) {
+  .error-error {
+    background-color: #450a0a;
+    border-color: #7f1d1d;
+    color: #fca5a5;
+  }
+
+  .error-warning {
+    background-color: #451a03;
+    border-color: #78350f;
+    color: #fbbf24;
+  }
+
+  .error-info {
+    background-color: #0c4a6e;
+    border-color: #1e40af;
+    color: #93c5fd;
+  }
+}

@@ -1,0 +1,1 @@
+export { AdministrationFormModal } from "./AdministrationFormModal";
