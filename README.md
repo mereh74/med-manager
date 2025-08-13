@@ -1,148 +1,254 @@
-# Medication Management System
+# 🏥 Medication Management System
 
-A comprehensive React-based application for managing patient medications, schedules, and administration records. Built with TypeScript, Vite, and TanStack Query for optimal performance and developer experience.
+A modern, responsive web application for healthcare providers to manage patient medications, schedules, and administration records. Built with React and TypeScript, this application provides an intuitive interface for tracking medication adherence and patient care.
 
-## Features
+## ✨ Features
 
-- **Patient Management**: View and manage patient information
-- **Medication Tracking**: Create and manage patient medications
-- **Schedule Management**: Set up medication schedules with day/time preferences
-- **Calendar View**: Visual calendar showing upcoming medication doses
-- **Administration Records**: Track when medications are actually taken
-- **Real-time Updates**: Optimistic updates with automatic cache invalidation
+### 🧑‍⚕️ Patient Management
 
-## Tech Stack
+- **Patient Profiles**: Complete patient information management
+- **Patient List**: Searchable and sortable patient directory
+- **Patient Context**: Global state management for current patient
 
-- **Frontend**: React 18 + TypeScript + Vite
-- **State Management**: TanStack Query (React Query)
-- **Styling**: Styled Components
-- **Routing**: React Router
-- **Build Tool**: Vite
-- **Linting**: ESLint with TypeScript support
+### 💊 Medication Management
 
-## Getting Started
+- **Medication Creation**: Add new medications with detailed specifications
+- **Medication List**: View all medications for a specific patient
+- **Active/Inactive Status**: Toggle medication status to track current prescriptions
+- **Bulk Operations**: Efficiently manage multiple medications
+
+### 📅 Schedule Management
+
+- **Medication Schedules**: Create recurring medication schedules
+- **Calendar View**: Visual calendar showing upcoming doses for the next two weeks
+- **Bulk Schedule Creation**: Set up multiple schedules for one medication
+- **Day/Time Configuration**: Flexible scheduling with multiple days and times
+
+### 💉 Administration Tracking
+
+- **Dose Administration**: Record when medications are actually taken
+- **Administration History**: Track all medication administrations
+- **Adherence Monitoring**: Monitor patient compliance with medication schedules
+- **Notes & Documentation**: Add detailed notes for each administration
+
+### 🔄 Real-time Updates
+
+- **Optimistic Updates**: Immediate UI feedback for better user experience
+- **Cache Management**: Intelligent data caching and synchronization
+- **Offline Support**: Graceful handling of network interruptions
+
+## 🛠️ Tech Stack
+
+### **Frontend Framework**
+
+- **React 19** - Latest React with modern hooks and concurrent features
+- **TypeScript** - Type-safe development with excellent IDE support
+
+### **State Management & Data Fetching**
+
+- **TanStack Query (React Query)** - Powerful data synchronization library
+  - **Automatic Caching**: Intelligent caching reduces API calls and improves performance
+  - **Background Updates**: Data stays fresh with automatic background refetching
+  - **Optimistic Updates**: Immediate UI feedback while API calls are in progress
+  - **Error Handling**: Built-in error boundaries and retry mechanisms
+  - **Offline Support**: Graceful degradation when network is unavailable
+  - **Real-time Sync**: Automatic data synchronization across components
+
+### **Routing & Navigation**
+
+- **React Router 7** - Modern client-side routing solution
+  - **Type-safe Routes**: TypeScript integration for route definitions
+  - **Nested Routing**: Organized route structure for complex applications
+  - **Programmatic Navigation**: Dynamic routing based on user actions
+  - **Route Guards**: Protected routes and authentication handling
+  - **Deep Linking**: Direct access to specific application states
+
+### **Styling & UI**
+
+- **Styled Components** - CSS-in-JS styling solution
+  - **Component-based Styling**: Styles are co-located with components
+  - **Dynamic Styling**: Runtime style changes based on props and state
+  - **Theme Support**: Consistent design system with theme variables
+  - **CSS-in-JS Benefits**: No CSS conflicts, better maintainability
+  - **Responsive Design**: Mobile-first approach with breakpoint utilities
+
+### **Build Tools**
+
+- **Vite** - Lightning-fast build tool and development server
+- **ESLint** - Code quality and consistency enforcement
+- **Vitest** - Fast unit testing framework
+
+## 🚀 Getting Started
 
 ### Prerequisites
 
 - Node.js 18+
-- npm or yarn
+- npm or yarn package manager
 
 ### Installation
 
-1. Clone the repository:
+1. **Clone the repository**
 
-```bash
-git clone <your-repo-url>
-cd med-management
+   ```bash
+   git clone <repository-url>
+   cd med-management
+   ```
+
+2. **Install dependencies**
+
+   ```bash
+   npm install
+   ```
+
+3. **Environment Setup**
+   Create a `.env` file in the root directory:
+
+   ```env
+   VITE_API_BASE_URL=http://localhost:3000
+   VITE_API_KEY=your-api-key-here
+   ```
+
+4. **Start development server**
+
+   ```bash
+   npm run dev
+   ```
+
+5. **Open your browser**
+   Navigate to `http://localhost:5173`
+
+## 📁 Project Structure
+
+```
+med-management/
+├── src/
+│   ├── api/                 # API endpoints and client configuration
+│   ├── components/          # Reusable UI components
+│   ├── contexts/            # React Context providers
+│   ├── hooks/               # Custom React hooks
+│   ├── pages/               # Page components
+│   ├── providers/           # App-level providers
+│   ├── types/               # TypeScript type definitions
+│   ├── utils/               # Utility functions
+│   └── test/                # Test setup and utilities
+├── public/                  # Static assets
+├── vitest.config.ts         # Test configuration
+└── package.json             # Dependencies and scripts
 ```
 
-2. Install dependencies:
+## 🧪 Testing
+
+### Run Tests
 
 ```bash
-npm install
+# Run all tests
+npm run test:run
+
+# Run tests in watch mode
+npm run test
+
+# Run tests with UI
+npm run test:ui
+
+# Generate coverage report
+npm run test:coverage
 ```
 
-### Environment Setup
+### Test Coverage
 
-**⚠️ IMPORTANT: Never commit your actual `.env` file to version control!**
+- **Component Tests**: UI component behavior and interactions
+- **Hook Tests**: Custom hook logic and state management
+- **Context Tests**: Context provider functionality
+- **Integration Tests**: Component integration and data flow
 
-1. Create a `.env` file in the project root:
+## 🏗️ Build & Deployment
 
-```bash
-cp .env.example .env
-```
-
-2. Update the `.env` file with your actual credentials:
-
-```bash
-# API Configuration
-VITE_API_KEY=your_actual_api_key_here
-VITE_API_BASE_URL=https://rbn1g3hpv0.execute-api.us-east-1.amazonaws.com/Prod
-NODE_ENV=development
-```
-
-3. **Get your API key securely** from the project maintainer via:
-   - Secure messaging (Signal, Telegram)
-   - Password manager sharing (1Password, LastPass)
-   - Encrypted email (ProtonMail)
-
-### Running the Application
-
-```bash
-npm run dev
-```
-
-The application will be available at `http://localhost:5173`
-
-### Building for Production
+### Development Build
 
 ```bash
 npm run build
+```
+
+### Preview Production Build
+
+```bash
 npm run preview
 ```
 
-Currently, two official plugins are available:
+### Production Deployment
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The application builds to static files that can be deployed to any static hosting service:
 
-## Expanding the ESLint configuration
+- Vercel
+- Netlify
+- AWS S3
+- GitHub Pages
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🔧 Configuration
 
-```js
-export default tseslint.config([
-  globalIgnores(["dist"]),
-  {
-    files: ["**/*.{ts,tsx}"],
-    extends: [
-      // Other configs...
+### Environment Variables
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+- `VITE_API_BASE_URL`: Backend API base URL
+- `VITE_API_KEY`: Authentication key for API access
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
-```
+### API Configuration
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+The application is configured to work with a RESTful backend API. Ensure your backend provides the following endpoints:
 
-```js
-// eslint.config.js
-import reactX from "eslint-plugin-react-x";
-import reactDom from "eslint-plugin-react-dom";
+- `GET /patients` - Retrieve patient list
+- `POST /medications` - Create new medication
+- `PUT /medications/:id` - Update medication
+- `GET /patients/:id/medications` - Get patient medications
+- `POST /medication-schedules/bulk` - Create medication schedules
+- `GET /patients/:id/medication-schedules` - Get patient schedules
+- `POST /medication-administrations` - Record medication administration
 
-export default tseslint.config([
-  globalIgnores(["dist"]),
-  {
-    files: ["**/*.{ts,tsx}"],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs["recommended-typescript"],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
-```
+## 🎨 Design Principles
+
+### **Accessibility First**
+
+- Semantic HTML structure
+- ARIA labels and roles
+- Keyboard navigation support
+- Screen reader compatibility
+
+### **Responsive Design**
+
+- Mobile-first approach
+- Flexible grid layouts
+- Adaptive typography
+- Touch-friendly interactions
+
+### **User Experience**
+
+- Intuitive navigation
+- Clear visual hierarchy
+- Consistent interaction patterns
+- Helpful error messages
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- **React Team** for the amazing framework
+- **TanStack** for the powerful Query library
+- **React Router** for seamless navigation
+- **Styled Components** for elegant styling solutions
+
+## 📞 Support
+
+For support, please open an issue in the GitHub repository or contact the development team.
+
+---
+
+**Built with ❤️ for better healthcare management**
