@@ -7,7 +7,7 @@ A modern, responsive web application for healthcare providers to manage patient 
 ### 🧑‍⚕️ Patient Management
 
 - **Patient Profiles**: Complete patient information management
-- **Patient List**: Searchable and sortable patient directory
+- **Patient List**: Patient directory
 - **Patient Context**: Global state management for current patient
 
 ### 💊 Medication Management
@@ -101,6 +101,7 @@ A modern, responsive web application for healthcare providers to manage patient 
    ```
 
 3. **Environment Setup**
+   Request the API base URL and API key from the administrator
    Create a `.env` file in the root directory:
 
    ```env
